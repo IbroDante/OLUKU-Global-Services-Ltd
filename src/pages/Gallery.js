@@ -45,7 +45,7 @@ const Gallery = () => {
       category: 'fish',
       title: 'Fresh Catfish Harvest',
       description: 'Premium quality catfish from our farm',
-      image: '/images/gallery/catfish-harvest.jpg',
+      image: '/images/about/om.jpg',
     },
     {
       category: 'property',
@@ -57,7 +57,7 @@ const Gallery = () => {
       category: 'fish',
       title: 'Smoked Fish Products',
       description: 'Professionally smoked and packaged fish',
-      image: '/images/gallery/smoked-fish.jpg',
+      image: '/images/about/office2.jpg',
     },
     {
       category: 'property',

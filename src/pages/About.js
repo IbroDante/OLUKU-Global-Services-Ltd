@@ -122,7 +122,7 @@ const About = () => {
               <div className="about-img-stack">
                 <div className="about-img-1">
                   <img
-  src="/images/about/office.jpg"
+  src="/images/about/om.jpg"
   alt="Oluku Global Head Office"
   className="about-real-img"
 />

@@ -236,7 +236,7 @@ const Home = () => {
             <div className="welcome-images">
               <div className="welcome-img-main">
                 <img
-  src="/images/about/office.jpg"
+  src="/images/about/office2.jpg"
   alt="Property Development"
   className="welcome-real-img"
 />
