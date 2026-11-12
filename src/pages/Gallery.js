@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  FaBuilding,
   FaFish,
+  FaBoxOpen,
+  FaUsers,
   FaTimes,
   FaChevronLeft,
   FaChevronRight,
@@ -16,84 +17,51 @@ const Gallery = () => {
 
   
 
-  // All gallery images — just change the file names to match yours
+  // Gallery images — real photos from our farm, processing unit and company records
   const galleryItems = [
-    {
-      category: 'property',
-      title: 'Luxury Estate Front View',
-      description: 'Modern residential estate in Bwari, Abuja',
-      image: '/images/gallery/luxury-estate.jpg',
-    },
-
-    {
-    category: 'fish',
-    title: 'Fish Pond Tour (Video)',
-    description: 'Watch our fish farm facility in action',
-    image: '/images/gallery/fish-pond.jpg',
-    isVideo: true,
-    videoSrc: '/videos/fish-pond.mp4',
-  },
-
-    
-    {
-      category: 'property',
-      title: 'Commercial Building',
-      description: 'Multi-story commercial development',
-      image: '/images/gallery/commercial-building.jpg',
-    },
     {
       category: 'fish',
       title: 'Fresh Catfish Harvest',
-      description: 'Premium quality catfish from our farm',
+      description: 'Hand-netted catfish from our ponds in Kuchiko, Bwari',
       image: '/images/about/om.jpg',
     },
     {
-      category: 'property',
-      title: 'Estate Development',
-      description: 'Housing estate under construction',
-      image: '/images/gallery/estate-development.jpg',
+      category: 'fish',
+      title: 'Fish Farm Tour (Video)',
+      description: 'Watch our fish farm facility in action',
+      image: '/images/about/om.jpg',
+      isVideo: true,
+      videoSrc: '/videos/fish-pond.mp4',
     },
     {
-      category: 'fish',
-      title: 'Smoked Fish Products',
-      description: 'Professionally smoked and packaged fish',
+      category: 'processing',
+      title: 'Smoked Catfish Racks',
+      description: 'Traditionally smoked catfish cooling on the racks',
+      image: '/images/gallery/fish-pond.jpg',
+    },
+    {
+      category: 'processing',
+      title: 'Our Smoke Kiln',
+      description: 'Loading a fresh batch into the smoking kiln',
+      image: '/images/gallery/catfish-harvest.jpg',
+    },
+    {
+      category: 'processing',
+      title: 'Packaged For Market',
+      description: 'Graded and sealed Oluku smoked catfish',
       image: '/images/about/office2.jpg',
     },
     {
-      category: 'property',
-      title: 'Duplex Interior',
-      description: 'Premium interior finishing of our duplexes',
-      image: '/images/gallery/duplex-interior.jpg',
+      category: 'company',
+      title: 'Our Chief Executive',
+      description: 'Mr. Kunle Atitebi, Chief Executive Officer',
+      image: '/images/about/ceo2.jpg',
     },
     {
-      category: 'fish',
-      title: 'Fingerling Supply',
-      description: 'Quality fingerlings ready for distribution',
-      image: '/images/gallery/fingerling-supply.jpg',
-    },
-    {
-      category: 'property',
-      title: 'Land Survey',
-      description: 'Land survey and acquisition across states',
-      image: '/images/gallery/land-survey.jpg',
-    },
-    {
-      category: 'fish',
-      title: 'Distribution',
-      description: 'Fish products ready for nationwide delivery',
-      image: '/images/gallery/distribution.jpg',
-    },
-    {
-      category: 'property',
-      title: 'Head Office',
-      description: 'Our office at Kuduru, Bwari-Abuja',
-      image: '/images/gallery/head-office.jpg',
-    },
-    {
-      category: 'fish',
-      title: 'Farm Aerial View',
-      description: "Bird's eye view of our fish farm in Kuchiko",
-      image: '/images/gallery/farm-aerial.jpg',
+      category: 'company',
+      title: 'CAC Certificate of Incorporation',
+      description: 'Registered with the Corporate Affairs Commission — RC: 2025440',
+      image: '/images/about/office.jpg',
     },
   ];
 
@@ -167,19 +135,27 @@ const Gallery = () => {
             </button>
             <button
               className={`filter-btn ${
-                activeFilter === 'property' ? 'filter-btn-active' : ''
-              }`}
-              onClick={() => setActiveFilter('property')}
-            >
-              <FaBuilding /> Properties
-            </button>
-            <button
-              className={`filter-btn ${
                 activeFilter === 'fish' ? 'filter-btn-active' : ''
               }`}
               onClick={() => setActiveFilter('fish')}
             >
               <FaFish /> Fish Farm
+            </button>
+            <button
+              className={`filter-btn ${
+                activeFilter === 'processing' ? 'filter-btn-active' : ''
+              }`}
+              onClick={() => setActiveFilter('processing')}
+            >
+              <FaBoxOpen /> Processing
+            </button>
+            <button
+              className={`filter-btn ${
+                activeFilter === 'company' ? 'filter-btn-active' : ''
+              }`}
+              onClick={() => setActiveFilter('company')}
+            >
+              <FaUsers /> Company
             </button>
           </div>
 

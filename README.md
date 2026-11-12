@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Oluku Global Services Limited — Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Corporate website for **Oluku Global Services Limited** (RC: 2025440), a CAC-registered
+Nigerian company working in **property acquisition & development** and **fish farming,
+processing and distribution**. Built with Create React App (React 19 + React Router 7).
 
-## Available Scripts
+## Getting started
 
-In the project directory, you can run:
+```bash
+npm install
+npm start      # development server on http://localhost:3000
+npm run build  # production build in /build
+```
 
-### `npm start`
+## Brand assets
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+All logo artwork lives in `public/images/brand/` and is generated from the master logo:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+| File | Use |
+| --- | --- |
+| `oluku-logo.jpg` | Full lockup (emblem + wordmark + tagline). Used in the footer logo plate, the home page hero brand card and the Open Graph share image. |
+| `oluku-emblem.png` | Emblem only, transparent background. Used in the navbar, page-header watermarks, stats band, CTA bands and project cards. |
 
-### `npm test`
+App icons are generated from the emblem and live in `public/`:
+`favicon.ico`, `logo192.png`, `logo512.png`, `apple-touch-icon.png`.
+`public/manifest.json` and `public/index.html` reference them.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Where the logo appears
 
-### `npm run build`
+- **Navbar** — emblem + wordmark lockup, linking to the home page.
+- **Footer** — full logo on a white plate so it stays crisp on the dark navy footer.
+- **Home hero** — floating white brand card with the full logo lockup.
+- **Inner page headers, stats band, CTA bands, project cards** — subtle emblem watermark.
+- **Browser tab / mobile home screen** — emblem favicon and app icons.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Styling
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `src/styles/styles.css` — original layout and component styles.
+- `src/styles/brand.css` — brand layer loaded **after** `styles.css`. It holds the design
+  tokens (navy, royal blue, gold, silver taken from the logo), the typography scale,
+  and the refined navbar, hero, cards, page headers and footer. Add new visual work here
+  so the layered overrides stay predictable.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Typefaces: **Plus Jakarta Sans** (headings, buttons) and **Inter** (body), loaded from
+Google Fonts in `public/index.html` with system-font fallbacks.
 
-### `npm run eject`
+## Project structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+public/
+  images/about/     company, farm, packaging and certificate photos
+  images/brand/     logo and emblem assets
+  images/gallery/   gallery photography
+  videos/           fish farm video
+src/
+  components/       Navbar, Footer, ScrollToTop, WhatsAppFloat
+  pages/            Home, About, Services, Projects, Gallery, Contact
+  styles/           styles.css + brand.css
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contact form
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The contact form prepares a formatted message and opens it in WhatsApp
+(`wa.me/2348025551994`), so no backend is required.
