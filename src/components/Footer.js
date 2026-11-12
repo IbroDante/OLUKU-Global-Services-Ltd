@@ -40,16 +40,17 @@ const Footer = () => {
         <div className="container footer-grid">
           {/* Company Info */}
           <div className="footer-col footer-about">
-            <div className="footer-logo">
-              <div className="logo-icon footer-logo-icon">
-                <span className="logo-letter">O</span>
-                <span className="logo-letter-sub">G</span>
-              </div>
-              <div className="logo-text">
-                <span className="logo-name">OLUKU</span>
-                <span className="logo-tagline">Global Services Ltd</span>
-              </div>
-            </div>
+            <Link to="/" className="footer-logo" aria-label="Oluku Global Services Ltd — Home">
+              <span className="footer-logo-plate">
+                <img
+                  src="/images/brand/oluku-logo.jpg"
+                  alt=""
+                  width="1200"
+                  height="477"
+                  loading="lazy"
+                />
+              </span>
+            </Link>
             <p className="footer-description">
               A CAC-registered company delivering excellence in property
               development and fish farming since 2019. Building Nigeria's

@@ -11,7 +11,9 @@ import {
   FaUsers,
   FaProjectDiagram,
   FaAward, FaPhone,
-  FaGlobeAfrica, 
+  FaGlobeAfrica,
+  FaTint,
+  FaBoxOpen,
 } from 'react-icons/fa';
 
 const Home = () => {
@@ -27,6 +29,7 @@ const Home = () => {
       cta: 'Explore Properties',
       link: '/services',
       overlay: 'overlay-blue',
+      image: null,
     },
     {
       title: 'Farm Fresh Excellence',
@@ -36,6 +39,7 @@ const Home = () => {
       cta: 'Discover Our Farm',
       link: '/services',
       overlay: 'overlay-green',
+      image: '/images/about/om.jpg',
     },
     {
       title: 'Your Trusted Partner',
@@ -45,6 +49,7 @@ const Home = () => {
       cta: 'Learn About Us',
       link: '/about',
       overlay: 'overlay-dark',
+      image: '/images/about/office2.jpg',
     },
   ];
 
@@ -179,20 +184,30 @@ const Home = () => {
     <main>
       {/* ====== HERO SECTION ====== */}
       <section className="hero">
-        {heroSlides.map((slide, index) => (
+        {heroSlides.map((slide, index) => {
+          const TitleTag = index === 0 ? 'h1' : 'h2';
+          return (
           <div
             key={index}
             className={`hero-slide ${
               index === currentSlide ? 'hero-slide-active' : ''
-            } ${slide.overlay}`}
+            }`}
           >
-            <div className="hero-bg-pattern"></div>
+            {slide.image && (
+              <div
+                className="hero-photo"
+                style={{ backgroundImage: `url('${slide.image}')` }}
+                aria-hidden="true"
+              ></div>
+            )}
+            <div className={`hero-scrim ${slide.overlay}`} aria-hidden="true"></div>
+            <div className="hero-bg-pattern" aria-hidden="true"></div>
             <div className="container hero-content">
               <div className="hero-badge">
                 <FaCheckCircle /> CAC Registered Company
               </div>
-              <h2 className="hero-subtitle">{slide.subtitle}</h2>
-              <h1 className="hero-title">{slide.title}</h1>
+              <p className="hero-subtitle">{slide.subtitle}</p>
+              <TitleTag className="hero-title">{slide.title}</TitleTag>
               <p className="hero-description">{slide.description}</p>
               <div className="hero-buttons">
                 <Link to={slide.link} className="btn btn-primary btn-lg">
@@ -204,7 +219,20 @@ const Home = () => {
               </div>
             </div>
           </div>
-        ))}
+          );
+        })}
+
+        {/* Floating brand lockup */}
+        <div className="hero-brand-card" aria-hidden="true">
+          <img
+            src="/images/brand/oluku-logo.jpg"
+            alt=""
+            width="1200"
+            height="477"
+          />
+          <span className="hero-brand-divider"></span>
+          <p>Property &middot; Agriculture &middot; Distribution</p>
+        </div>
 
         {/* Slide Indicators */}
         <div className="hero-indicators">
@@ -236,16 +264,19 @@ const Home = () => {
             <div className="welcome-images">
               <div className="welcome-img-main">
                 <img
-  src="/images/about/office2.jpg"
-  alt="Property Development"
-  className="welcome-real-img"
-/>
+                  src="/images/about/om.jpg"
+                  alt="Fresh catfish harvest at our farm in Kuchiko, Bwari"
+                  className="welcome-real-img"
+                  loading="lazy"
+                />
               </div>
               <div className="welcome-img-secondary">
-                <div className="placeholder-img placeholder-img-fish">
-                  <FaFish className="placeholder-icon" />
-                  <span>Fish Farming</span>
-                </div>
+                <img
+                  src="/images/about/office2.jpg"
+                  alt="Oluku packaged smoked catfish ready for distribution"
+                  className="welcome-secondary-img"
+                  loading="lazy"
+                />
               </div>
               <div className="welcome-experience-badge">
                 <span className="experience-number">5+</span>
@@ -380,28 +411,28 @@ const Home = () => {
       </div>
       <div className="video-features">
         <div className="video-feature-item">
-          <div className="video-feature-icon">🐟</div>
+          <div className="video-feature-icon"><FaFish /></div>
           <div>
             <h4>50+ Fish Ponds</h4>
             <p>State-of-the-art pond system for maximum yield</p>
           </div>
         </div>
         <div className="video-feature-item">
-          <div className="video-feature-icon">🌊</div>
+          <div className="video-feature-icon"><FaTint /></div>
           <div>
             <h4>Clean Water System</h4>
             <p>Advanced water filtration and quality monitoring</p>
           </div>
         </div>
         <div className="video-feature-item">
-          <div className="video-feature-icon">📦</div>
+          <div className="video-feature-icon"><FaBoxOpen /></div>
           <div>
             <h4>Processing Facility</h4>
             <p>Hygienic smoking and packaging on-site</p>
           </div>
         </div>
         <div className="video-feature-item">
-          <div className="video-feature-icon">🌍</div>
+          <div className="video-feature-icon"><FaGlobeAfrica /></div>
           <div>
             <h4>Export Ready</h4>
             <p>Products meeting international quality standards</p>

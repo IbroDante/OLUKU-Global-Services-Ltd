@@ -123,14 +123,14 @@ const About = () => {
                 <div className="about-img-1">
                   <img
   src="/images/about/om.jpg"
-  alt="Oluku Global Head Office"
+  alt="Catfish harvest at our farm in Kuchiko, Bwari"
   className="about-real-img"
 />
                 </div>
                 <div className="about-img-2">
                   <img
   src="/images/about/fish-pond.jpg"
-  alt="Fish Farm Kuchiko Bwari"
+  alt="Traditionally smoked catfish ready for packaging"
   className="about-real-img"
 />
                 </div>

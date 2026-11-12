@@ -54,15 +54,19 @@ const Navbar = () => {
       {/* Main Navbar */}
       <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
         <div className="container navbar-content">
-          <Link to="/" className="navbar-logo">
-            <div className="logo-icon">
-              <span className="logo-letter">O</span>
-              <span className="logo-letter-sub">G</span>
-            </div>
-            <div className="logo-text">
-              <span className="logo-name">OLUKU</span>
-              <span className="logo-tagline">Global Services Ltd</span>
-            </div>
+          <Link to="/" className="navbar-logo" aria-label="Oluku Global Services Ltd — Home">
+            <img
+              src="/images/brand/oluku-emblem.png"
+              alt=""
+              className="navbar-emblem"
+              width="385"
+              height="420"
+              aria-hidden="true"
+            />
+            <span className="navbar-logo-text">
+              <span className="navbar-logo-name">OLUKU</span>
+              <span className="navbar-logo-tagline">Global Services Ltd</span>
+            </span>
           </Link>
 
           <div className={`nav-links ${isOpen ? 'nav-links-active' : ''}`}>
