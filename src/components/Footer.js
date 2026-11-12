@@ -169,7 +169,7 @@ const Footer = () => {
         <div className="container footer-bottom-content">
           <p>
             &copy; {new Date().getFullYear()} Oluku Global Services Limited.
-            All Rights Reserved. | RC: 2025440 | Powered by <a href="https://www.plugtech.onrender.com" target="_blank" rel="noopener noreferrer">Plug Technology</a>
+            All Rights Reserved. | RC: 2025440 | Powered by <a href="https://plugtec.onrender.com/" target="_blank" rel="noopener noreferrer">Plug Technology</a>
           </p>
           <button
             className="scroll-top-btn"
